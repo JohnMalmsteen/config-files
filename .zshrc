@@ -89,6 +89,13 @@ alias gb="git branch"
 alias co="git checkout"
 alias cod="git checkout development"
 alias cb=clearbranches
+alias gpo="git push origin"
+alias runwebui=webui
+
+webui(){
+    cd ~/webUI
+    runapps common login edr
+}
 
 clearbranches(){
     if [ -z "$1" ]; then
