@@ -19,9 +19,9 @@ set incsearch
 set ignorecase
 set lazyredraw
 set smartcase
-set cul
 set splitbelow
 set splitright
+set cul
 
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd vimenter * NERDTree 
@@ -76,3 +76,4 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>h
+nnoremap gp `[v`]

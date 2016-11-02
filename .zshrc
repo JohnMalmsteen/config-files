@@ -89,8 +89,11 @@ alias gb="git branch"
 alias co="git checkout"
 alias cod="git checkout development"
 alias cb=clearbranches
-alias gpo="git push origin"
-alias gca="git commit -a"
+alias po="git push origin"
+alias ca="git commit -a"
+alias u="cd .."
+alias uu="cd ../.."
+alias pull="git pull"
 alias runwebui=webui
 
 webui(){
