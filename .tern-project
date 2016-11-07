@@ -1,0 +1,20 @@
+{
+    "libs": [
+        "browser",
+        "jquery",
+        "angular",
+        "moment",
+        "underscore"
+    ],
+    "loadEagerly": [
+        "importantfile.js"
+    ],
+    "plugins": {
+        "requirejs": {
+             "baseURL": "./",
+             "paths": {}
+        }
+          
+    }
+
+}
