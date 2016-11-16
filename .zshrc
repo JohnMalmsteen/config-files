@@ -83,8 +83,10 @@ alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias edr="cd ~/webUI/edr/app/client"
+alias e2e="cd ~/webUI/e2e-testing"
 alias gd="grunt devsetup"
 alias trc="cd ~/webUI/trusteer-rest-client"
+alias rem="git remote -v"
 alias gb="git branch"
 alias co="git checkout"
 alias cod="git checkout development"
@@ -95,6 +97,7 @@ alias u="cd .."
 alias uu="cd ../.."
 alias pull="git pull"
 alias runwebui=webui
+alias sta="git status"
 
 webui(){
     cd ~/webUI

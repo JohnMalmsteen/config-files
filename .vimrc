@@ -77,7 +77,8 @@ vnoremap <S-Tab> <gv
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>h
 nnoremap gp `[v`]
-nnoremap <C-n> o$log.debug()<Esc>i
+nnoremap <C-n> o$log.debug();<Esc>hi
 nnoremap <S-s> :noh<return>
 noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
 imap <silent> <Home> <C-O><Home>
+noremap <C-S-b> i<return><Esc>
