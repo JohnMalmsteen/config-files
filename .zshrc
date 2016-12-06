@@ -83,7 +83,10 @@ alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias edr="cd ~/webUI/edr/app/client"
+alias ide="edr && vim"
+alias unit="edr && grunt test"
 alias e2e="cd ~/webUI/e2e-testing"
+alias bvt="e2e && mv /Applications/Google\ Chrome.app /Applications/tempchrome && cp -r Google\ Chrome.app /Applications && grunt run-e2e; mv -f /Applications/tempchrome /Applications/Google\ Chrome.app"
 alias gd="grunt devsetup"
 alias trc="cd ~/webUI/trusteer-rest-client"
 alias rem="git remote -v"
@@ -93,6 +96,7 @@ alias cod="git checkout development"
 alias cb=clearbranches
 alias po="git push origin"
 alias ca="git commit -a"
+alias cam="git commit -am"
 alias u="cd .."
 alias uu="cd ../.."
 alias pull="git pull"
@@ -124,7 +128,7 @@ mysearchfunc(){
     else
         dir=$2
     fi
-    grep -rl $1 $dir    
+    grep -irl $1 $dir    
 }
 alias search=mysearchfunc
 alias reload='source ~/.zshrc'
@@ -134,4 +138,5 @@ source /usr/local/Bluemix/bx/zsh_autocomplete
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export NVM_DIR="$HOME/.nvm"
+export ETL_DIR="$HOME/webUI/etl"
 . "$(brew --prefix nvm)/nvm.sh"

@@ -22,6 +22,7 @@ set smartcase
 set splitbelow
 set splitright
 set cul
+set dictionary=/usr/share/dict/words
 
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd vimenter * NERDTree 
@@ -48,6 +49,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-commentary'
 Plugin 'maralla/validator'
+Plugin 'junegunn/vim-easy-align'
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -82,3 +84,6 @@ nnoremap <S-s> :noh<return>
 noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
 imap <silent> <Home> <C-O><Home>
 noremap <C-S-b> i<return><Esc>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
