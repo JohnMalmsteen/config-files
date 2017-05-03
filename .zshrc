@@ -1,3 +1,4 @@
+ssh-add -K
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/johnfrizzell/.oh-my-zsh
 # Set name of the theme to load.
@@ -81,12 +82,14 @@ alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 alias edr="cd ~/webUI/edr/app/client"
 alias ide="edr && vim"
+alias inv="edr && vim -O investigation/process.ejs investigation/controllers/process.js"
 alias unit="edr && grunt test"
 alias e2e="cd ~/webUI/e2e-testing"
 alias bvt="e2e && mv /Applications/Google\ Chrome.app /Applications/tempchrome && cp -r Google\ Chrome.app /Applications && grunt run-e2e; mv -f /Applications/tempchrome /Applications/Google\ Chrome.app"
 alias gd="grunt devsetup"
 alias trc="cd ~/webUI/trusteer-rest-client"
 alias rem="git remote -v"
+alias remb="git ls-remote --heads origin"
 alias gb="git branch"
 alias co="git checkout"
 alias cod="git checkout development"
@@ -96,9 +99,13 @@ alias ca="git commit -a"
 alias cam="git commit -am"
 alias u="cd .."
 alias uu="cd ../.."
+alias uuu="u;uu"
+alias 4u="uu;uu"
 alias pull="git pull"
 alias runwebui=webui
 alias sta="git status"
+alias procs="top -o cpu"
+alias trnt="aria2c"
 
 webui(){
     cd ~/webUI

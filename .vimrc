@@ -8,9 +8,10 @@ set background=dark
 set ttyfast
 colorscheme distinguished 
 set number
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=0
+set smarttab
 set expandtab
 set scrolloff=5
 set backspace=2
@@ -30,6 +31,8 @@ autocmd VimEnter * wincmd p
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -79,11 +82,15 @@ vnoremap <S-Tab> <gv
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>h
 nnoremap gp `[v`]
+" nnoremap <C-m> o<%= __('') %><Esc>hhhhi
 nnoremap <C-n> o$log.debug();<Esc>hi
+nnoremap <C-\<> oconsole.log();<Esc>hi
 nnoremap <S-s> :noh<return>
-noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
-imap <silent> <Home> <C-O><Home>
+" noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
+" imap <silent> <Home> <C-O><Home>
 noremap <C-S-b> i<return><Esc>
+nnoremap <silent> <F2> @=(foldlevel('.')?'za':"\<F2>")<CR>
+vnoremap <F2> zf
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
