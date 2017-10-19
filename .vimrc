@@ -51,8 +51,9 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-commentary'
-Plugin 'maralla/validator'
+Plugin 'maralla/validator.vim'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/fzf'
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
