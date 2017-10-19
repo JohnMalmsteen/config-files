@@ -101,15 +101,45 @@ alias u="cd .."
 alias uu="cd ../.."
 alias uuu="u;uu"
 alias 4u="uu;uu"
+alias solrdir="cd /usr/local/opt/solr@5.5/server/solr"
 alias pull="git pull"
 alias runwebui=webui
 alias sta="git status"
 alias procs="top -o cpu"
-alias trnt="aria2c"
+alias trnt="aria2c --seed-time=0"
+alias gitjira=gitjira
+alias jcom=jiracommit
+alias dns="dig +short"
+alias rhelvm="ssh root@9.162.177.42"
+alias ubvm="ssh ibmadmin@9.162.177.28"
+
+gitjira(){
+  if [ "$1" ]; then
+    str="EDR-$1"
+    if [ "$2" ]; then
+      str="$str/$2"
+    fi
+    git checkout -b $str
+  else
+    echo 'Please use the format $ gitjira [issue#] [name (optional)]'
+  fi
+}
+
+jiracommit(){
+  branchname=`git rev-parse --abbrev-ref HEAD`
+  jiraissue=$(echo $branchname| cut -d'/' -f 1)
+  commitmessage=$jiraissue
+  if [ "$1" ]; then
+    commitmessage="$jiraissue $1"
+    git commit -am "$commitmessage"
+  else
+    echo "Please use the format $ jcom [commit message]"
+  fi
+}
 
 webui(){
     cd ~/webUI
-    runapps common login edr
+    runapps common login edr etl
 }
 
 clearbranches(){
@@ -126,15 +156,7 @@ clearbranches(){
     fi
 }
 
-mysearchfunc(){
-    if [ -z "$2" ]; then 
-        dir=.
-    else
-        dir=$2
-    fi
-    grep -irl $1 $dir    
-}
-alias search=mysearchfunc
+alias search="fzf --preview 'head -100 {}'"
 alias reload='source ~/.zshrc'
 
 ### Added by the Bluemix CLI
