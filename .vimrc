@@ -41,7 +41,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
@@ -51,12 +52,14 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-commentary'
-Plugin 'maralla/validator.vim'
+Plugin 'tpope/vim-classpath'
+"Plugin 'maralla/validator.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/fzf'
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+let g:ale_completion_enabled = 1
 let g:user_emmet_install_global = 0
 let g:AutoPairsCenterLine=0
 let g:syntastic_always_populate_loc_list = 1

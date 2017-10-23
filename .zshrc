@@ -156,7 +156,18 @@ clearbranches(){
     fi
 }
 
-alias search="fzf --preview 'head -100 {}'"
+alias find="fzf --preview 'head -100 {}'"
+alias search=mysearchfunc
+
+mysearchfunc(){
+  if [ -z "$2" ]; then
+    dir=.
+  else
+    dir=$2
+  fi
+  grep -irl $1 $dir
+}
+
 alias reload='source ~/.zshrc'
 
 ### Added by the Bluemix CLI
